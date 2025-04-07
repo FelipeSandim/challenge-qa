@@ -1,3 +1,11 @@
+
+Caso queira ver os testes rodando no navegador:
+
+1. Abrir a pasta Utils
+2. Entre na classe Utils.cs
+3. Comente a linha 13.  options.AddArgument("--headless");
+Isso vai fazer que os testes rodem abrindo o navegador do chrome (versão do Chrome 135.0.7049.42 (Versão oficial) 64 bits)
+
 +A Educação - Analista de Testes
 ===================
 
