@@ -16,9 +16,6 @@ namespace QA_Challenge.Utils
             _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
         }
 
-        /// <summary>
-        /// Clica em um elemento. Por padrão, usa CSS Selector. Se isXPath = true, usa XPath.
-        /// </summary>
         public void Clicar(string seletor, bool isXPath = false)
         {
             var by = isXPath ? By.XPath(seletor) : By.CssSelector(seletor);
@@ -26,9 +23,6 @@ namespace QA_Challenge.Utils
             elemento.Click();
         }
 
-        /// <summary>
-        /// Preenche um campo localizado por CSS Selector.
-        /// </summary>
         public void PreencherCampo(string seletor, string valor)
         {
             var elemento = _wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(seletor)));
@@ -36,9 +30,6 @@ namespace QA_Challenge.Utils
             elemento.SendKeys(valor);
         }
 
-        /// <summary>
-        /// Aguarda até que um elemento esteja visível. Por padrão, usa CSS Selector. Se isXPath = true, usa XPath.
-        /// </summary>
         public void AguardarVisibilidade(string seletor, int timeoutSegundos, bool isXPath = false)
         {
             var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(timeoutSegundos));
