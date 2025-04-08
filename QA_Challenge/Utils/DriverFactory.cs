@@ -16,9 +16,9 @@ public class DriverFactory
             options.AddArgument("--no-sandbox");
             options.AddArgument("--disable-dev-shm-usage");
 
-            _driver = new ChromeDriver(options); // primeiro cria o driver
+            _driver = new ChromeDriver(options);
 
-            _driver.Manage().Window.Maximize();  // depois manipula
+            _driver.Manage().Window.Maximize();
         }
 
         return _driver;
