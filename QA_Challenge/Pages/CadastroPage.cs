@@ -78,16 +78,16 @@ namespace QA_Challenge.Pages
                 _ => throw new ArgumentException("Opção de nível de ensino inválida!")
             };
 
-            _elements.Clicar(xpath, true); // <- Aqui está o ajuste
+            _elements.Clicar(xpath, true); 
         }
 
         public void SelecionarCurso(string curso)
         {
-            _elements.Clicar(DropDownCurso); // esse pode continuar assim, pois é CSS
+            _elements.Clicar(DropDownCurso); 
 
             string xpathCurso = $"//div[@role='option' and normalize-space()='{curso}']";
-            _elements.AguardarVisibilidade(xpathCurso, 10, true); // ← agora sim
-            _elements.Clicar(xpathCurso, true);                   // ← agora sim
+            _elements.AguardarVisibilidade(xpathCurso, 10, true); 
+            _elements.Clicar(xpathCurso, true);                  
         }
 
         public void PreencherFormularioCadastro()
@@ -97,7 +97,6 @@ namespace QA_Challenge.Pages
 
         public void PreencherFormularioComCampoVazio(string? campoVazio)
         {
-            // Traduz o nome vindo do .feature (ex: "nome") para o nome real do data-testid (ex: "name")
             if (!string.IsNullOrEmpty(campoVazio) &&
                 MapeamentoCampos.TryGetValue(campoVazio.ToLower(), out var campoTestId))
             {
